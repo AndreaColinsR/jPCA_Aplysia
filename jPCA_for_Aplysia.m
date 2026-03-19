@@ -1,4 +1,4 @@
-function [jPCA_scores,Loads_jPC]=jPCA_for_Aplysia(filename,varargin)
+function [jPCA_scores,Loads_jPC,Var_exp_jpc]=jPCA_for_Aplysia(filename,varargin)
 %% jPCA_for_Aplysia performs jPCA in a segment of a recording
 %
 % DESCRIPTION:
@@ -76,12 +76,11 @@ bint=50; %ms bins to format the data into. Here each bin of the total_matrix_1 c
 ndim = 6; % number of dimensions to create PCA to then do jPCA
 
 % aux vars
-toS = bint/1000;
 toBins = 1000/bint;
 
 %% 1. Load data
 
-load(filename)
+load(filename,'spks','stim_time')
 Nneurons = max(spks(:,1)); % number of neurons
 
 % if start and end are not specified by the user analyse the entire
@@ -168,4 +167,6 @@ plot(1:ndim,cumsum(summary.varCaptEachJPC),'r')
 xlabel('Number of dimension')
 ylabel('Cumulative variance explained [%]')
 legend('PCA','jPCA')
+
+Var_exp_jpc=summary.varCaptEachJPC;
 end
