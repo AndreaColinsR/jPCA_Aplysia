@@ -5,9 +5,10 @@ function Comparing_jPCAs
 %
 % filename = string containing the name of the file
 % 
-% segments = (Nx2 matrix) every row defines a new segment in which the first and second column are the start 
+% segments = (Nx2 matrix) every row defines a new segment in which the first and second columns are the start 
 % and end time respectively 
-% values are in seconds from th start of the recording 
+% values are in seconds from the start of the recording 
+%
 % the example below analyses two segments of the file Feb0416_1.mat: 
 % segment 1: between 90 and 250 s 
 % segment 2: between 300 and 900 s
