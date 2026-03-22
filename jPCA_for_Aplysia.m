@@ -152,8 +152,8 @@ ylabel('PC 2')
 zlabel('PC 3')
 
 %% 5.3 jPCA
-title('jPCA')
 subplot(2,2,3)
+title('jPCA')
 plot3(jPCA_scores(:,1),jPCA_scores(:,2),jPCA_scores(:,3),'r')
 xlabel('jPC 1')
 ylabel('jPC 2')
